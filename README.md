@@ -2,9 +2,15 @@
 
 A long-term engineering journey from computer systems to scalable AI systems.
 
-## Vision
+## About
 
-Build a deep understanding of modern AI systems from the bottom up.
+AI Systems Lab is a personal engineering laboratory for studying,
+implementing, benchmarking, and researching modern computer and AI systems.
+
+The focus is not simply on learning technologies, but on building systems,
+measuring their behavior, understanding their bottlenecks, and sharing the results.
+
+## Engineering Path
 
 ```text
 Computer Systems
@@ -17,7 +23,7 @@ Compilers
        ↓
 Parallel Computing
        ↓
-CUDA / GPU Programming
+GPU / CUDA
        ↓
 Distributed Systems
        ↓
@@ -25,44 +31,71 @@ LLM Systems
        ↓
 Scalable AI
        ↓
-AI Agents
+AI Infrastructure
 ```
 
-## Philosophy
-
-Learn → Implement → Measure → Explain → Share
-
-## Goals
-
-- Understand how software runs on real machines
-- Understand operating systems and computer architecture
-- Learn compilers and GPU programming
-- Understand distributed systems
-- Build scalable AI systems
-- Understand LLM infrastructure
-- Contribute to open source
-- Turn engineering experiments into research
-
-## Current Project
-
-### Project 001 — From C Code to CPU
-
-Understand what happens when a simple C program is compiled and executed.
-
+## Engineering Philosophy
 ```
-C Source
+Question
    ↓
-Compiler
+Design
    ↓
-Assembly
+Implement
    ↓
-Object File
+Benchmark
    ↓
-Linker
+Profile
    ↓
-Executable
+Analyze
    ↓
-Operating System
+Optimize
    ↓
-CPU
+Explain
+   ↓
+Share
 ```
+
+The goal is to turn learning into measurable engineering work.
+
+
+## Projects
+
+| Project | Focus | Status |
+|---|---|---|
+| 001 — From C Code to CPU | C, compiler, assembly, executable, CPU | In Progress |
+
+More projects will be added as the laboratory evolves.
+
+## Research
+
+Long-term research interests include:
+
+- GPU performance
+- CUDA kernel optimization
+- LLM inference
+- KV cache
+- Distributed AI systems
+- AI infrastructure
+- Compiler optimization
+- Performance engineering
+
+## Open Source
+
+The long-term goal is to contribute to and learn from open-source systems
+such as:
+
+- PyTorch
+- LLVM
+- MLIR
+- Triton
+- vLLM
+- SGLang
+- FlashInfer
+
+## Roadmap
+
+See [ROADMAP.md](ROADMAP.md).
+
+## Principle
+
+> Learn → Implement → Measure → Explain → Share
