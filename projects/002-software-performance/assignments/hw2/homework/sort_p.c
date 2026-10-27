@@ -23,7 +23,80 @@
 
 #include "./util.h"
 
+
+static void merge_p(data_t* A, int p, int q, int r);
+
+static inline void copy_p(data_t* source, data_t* dest, int n);
+
 void sort_p(data_t* A, int p, int r) {
-  printf("Unimplemented!\n");
+  assert(A);
+
+  if (p < r) { 
+  
+    int q = (p + r) / 2;
+    sort_p(A, p, q);
+    sort_p(A, q + 1, r);
+    merge_p(A, p, q, r); 
+  
+  }
+  
+}
+
+static inline void copy_p(data_t* source, data_t* dest, int n) {
+  assert(source);
+  assert(dest);
+
+
+  data_t* source_end = source +n;
+
+  while (source < source_end) {
+    *dest = *source;
+    source++;
+    dest++;
+  }
+
+}
+
+static void merge_p(data_t* A, int p, int q, int r) {
+  
+  assert(A);
+  assert(p <= q);
+  assert((q + 1) <= r);
+  int n1 = q - p + 1;
+  int n2 = r - q;
+
+  data_t* left = 0, * right = 0;
+  mem_alloc(&left, n1 + 1);
+  mem_alloc(&right, n2 + 1);
+  if (left == NULL || right == NULL) {
+    mem_free(&left);
+    mem_free(&right);
+    return;
+  }
+  copy_p(A + p, left, n1);
+  copy_p(A + q + 1, right, n2);
+
+  left[n1] = UINT_MAX;
+  right[n2] = UINT_MAX;
+
+
+  data_t* left_cur = left;
+  data_t* right_cur = right;
+  data_t* dest = A + p;
+  data_t* dest_end = A + r + 1;
+
+  while (dest < dest_end) {
+    if (*left_cur <= *right_cur) {
+      *dest = *left_cur;
+      left_cur++;
+    } else {
+      *dest = *right_cur;
+      right_cur++;
+    }
+    dest++; 
+  }
+
+  mem_free(&left);
+  mem_free(&right);
 }
 
